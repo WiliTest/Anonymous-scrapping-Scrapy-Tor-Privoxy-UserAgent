@@ -15,7 +15,7 @@ class QuotesSpider(scrapy.Spider):
 			print('\n\nurl:', url)
       ## use one of the yield below
       
-			# middleware will treat the request
+			# middleware will process the request
 			yield scrapy.Request(url=url, callback=self.parse) 
       
 			# check if Tor has changed IP
