@@ -25,7 +25,7 @@ class ProxyMiddleware(object):  #ProxyMiddleware_try_with_print(object):#
 
 	def process_request(self, request, spider):
 		'''
-		> short version: replace everything by in this def by: 
+		> short version: replace everything in this def by: 
 		set_new_ip()
 		request.meta['proxy'] = 'http://127.0.0.1:8118'
 		
