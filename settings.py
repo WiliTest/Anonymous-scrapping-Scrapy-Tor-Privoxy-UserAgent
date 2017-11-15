@@ -11,6 +11,6 @@ DOWNLOADER_MIDDLEWARES = {
 	# activate http proxy (turn on proxy)
 	'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 	# call the middleware to customize the http proxy  (set proxy to 'http://127.0.0.1:8118')
-	example.middlewares.ProxyMiddleware': 100,
+	'example.middlewares.ProxyMiddleware': 100,
 
 }
