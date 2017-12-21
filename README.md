@@ -2,8 +2,10 @@
 A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 
 
+
+
 #### Here is just a draft of informations I would have loved to find in one place:
-(Improvement are much welcome!)
+Sorry the formatting is messed up (no time), you are very welcome to improve it !
 
 **port number & proxy**
 ● 9051 :  If ControlPort is set ( with this port, in torrc file), Tor will accept connections on this port and allow those connections to control the Tor process using the Tor Control Protocol. 
@@ -19,11 +21,13 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 
 
 **Proxy looks like:**	
+
 	https://<proxy>:<port>/
 	
 	
 ** info set tor IP change:**
-	 https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor/30440372#30440372
+
+	https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor/30440372#30440372
 		
 	● ≠ btw privoxy/tor htpps vs socks:
 	https://security.stackexchange.com/questions/45606/how-tor-privoxy-vidalia-and-polipo-are-getting-together
@@ -33,10 +37,12 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 	● Privoxy is a proxy server that (pay attention here) uses application-layer filtering. HTTP traffic passed through Privoxy will have certain privacy-oriented rules applied to them. For example, Privoxy will block ads, detect and disable click-tracking scripts, disabling pop-ups, etc.
 		
 **What's the difference between ControlPort and SocksPort?**
+
 	https://tor.stackexchange.com/questions/12627/whats-the-difference-between-controlport-and-socksport
 	
 	
 ** Using tor Expert Bundle (not for tor brownser)**
+
 	● dwd it here: https://www.torproject.org/download/download.html.en
 	
 	
@@ -86,6 +92,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 						alt: https://github.com/aivarsk/scrapy-proxies
 	
 ** privoxy**
+
 	● why do I need privoxy: https://security.stackexchange.com/a/45610/90756 
 	
 	● a socks proxy can't see what the request contains (ge. it can't see the HTML), an HTTP proxy can see the HTML and it can filter (remove stuff inside such as adds, java that spy you ...)
@@ -103,6 +110,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 	
 	
 ** auto switch user agent ** 
+
 	● pip install scrapy-fake-useragent
 	● Follow the steps:  https://github.com/alecxe/scrapy-fake-useragent  (need to write in settings.py)
 	
@@ -111,7 +119,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 		print response.request.headers['User-Agent']
 		
 		
-## if you use tor brownser (bad idea):
+** if you use tor brownser (bad idea):**
 
 	● just write these code : 	https://stackoverflow.com/a/33875657/1486850  *but change all 9050 into 9150 !*
 			
