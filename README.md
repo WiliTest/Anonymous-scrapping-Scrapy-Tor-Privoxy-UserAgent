@@ -42,8 +42,8 @@ https://tor.stackexchange.com/questions/12627/whats-the-difference-between-contr
 
 `C:\Users\User\Desktop\Tor\Tor>tor.exe --hash-password "dz#X2nB%LJHGF0sB9DnZWv#E0nJR" | more `
 
-It will give you a hash (looks like: `16:4E9AE...`  Copy it (you'll need it for the torrc file) 
-	(you could also set a cookie https://stem.torproject.org/tutorials/the_little_relay_that_could.html )
+It will give you a hash (looks like: `16:4E9AE...`) Copy it, you'll need it for the torrc file.
+(You could also set a cookie https://stem.torproject.org/tutorials/the_little_relay_that_could.html )
 		
 2)  Create the "torrc" file (without any extension) in C:\Users\User\Desktop\Tor\torrc
 				
