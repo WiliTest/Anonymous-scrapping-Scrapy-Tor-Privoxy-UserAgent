@@ -4,7 +4,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 
 
 
-#### Here is just a draft of informations I would have loved to find in one place:
+#### Here is just _a draft_ of informations I would have loved to find in one place:
 Sorry the formatting is messed up (no time), you are very welcome to improve it !
 
 ■■■ **About port number & proxy**
