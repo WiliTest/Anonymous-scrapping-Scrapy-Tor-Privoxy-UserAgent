@@ -96,7 +96,7 @@ then follow that https://superuser.com/a/1130890/235752
 	 	which by default listens at port 8118.
 	
 	
-■■■ **Auto switch user agent ** 
+■■■ **Auto switch user agent** 
 
 ● pip install scrapy-fake-useragent
 ● Follow the steps:  https://github.com/alecxe/scrapy-fake-useragent  (need to write in settings.py)
