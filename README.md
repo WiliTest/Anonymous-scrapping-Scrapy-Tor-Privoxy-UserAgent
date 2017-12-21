@@ -7,7 +7,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 #### Here is just a draft of informations I would have loved to find in one place:
 Sorry the formatting is messed up (no time), you are very welcome to improve it !
 
-■ **port number & proxy**
+■■■ **port number & proxy**
 
 ● 9051 :  If ControlPort is set ( with this port, in torrc file), Tor will accept connections on this port and allow those connections to control the Tor process using the Tor Control Protocol. 
 		# unless you also specify one or more of HashedControlPassword or CookieAuthentication, setting this option will cause Tor to allow any process on the local host to control it. This option is required for many Tor controllers; most use the value of 9051.
@@ -32,7 +32,9 @@ https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor
 https://security.stackexchange.com/questions/45606/how-tor-privoxy-vidalia-and-polipo-are-getting-together
 		
 ● tor is a SOCKS proxy (doesnt understand TCP traffic.)
+
 ● while privoxy and polipo are HTTP proxies
+
 ● Privoxy is a proxy server that (pay attention here) uses application-layer filtering. HTTP traffic passed through Privoxy will have certain privacy-oriented rules applied to them. For example, Privoxy will block ads, detect and disable click-tracking scripts, disabling pop-ups, etc.
 		
 **What's the difference between ControlPort and SocksPort?**
