@@ -2,7 +2,8 @@
 A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 
 
-##__Here is just a draft of informations I would have loved to find in one place. Improvement are much welcome!
+# Here is just a draft of informations I would have loved to find in one place:
+(Improvement are much welcome!)
 
 ##port number & proxy
 	# 9051 :  If ControlPort is set ( with this port, in torrc file), Tor will accept connections on this port and allow those connections to control the Tor process using the Tor Control Protocol. 
