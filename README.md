@@ -48,7 +48,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 				ControlPort 9051
 				# If you enable the controlport, be sure to enable one of these
 				# authentication methods, to prevent attackers from accessing it.
-				HashedControlPassword 16:04C7A4567Y67BS6B69EE768NV7375CA2B7493414372
+				HashedControlPassword 16:04C7A70H876B7BS6B69EE768NV7375CA2B7493414372
 			
 				# info about torrc + list of option you can enable on it : 			https://tor.stackexchange.com/questions/6712/using-the-tor-expert-bundle-on-windows
 			
@@ -56,8 +56,8 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 			# you need to remove + recreate the service `Tor Win32` using the cmd prompt (the path point to the torrc file) 
 
 			C:\Users\User\Desktop\Tor\Tor>tor.exe --service remove
-			C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\Me\Desktop\Tor\torrc"
-			#C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\Me\Desktop\tor-win32-0.3.1.7\torrc"
+			C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\user\Desktop\Tor\torrc"
+			#C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\user\Desktop\tor-win32-0.3.1.7\torrc"
 			
 			
 			#if StartService() failed : `Access is denied` see: https://stackoverflow.com/a/47291114/1486850 
@@ -111,7 +111,7 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 	pip install scrapy-fake-useragent
 	#Follow the steps:  https://github.com/alecxe/scrapy-fake-useragent  (need to write in settings.py)
 	
-	#cjeck it:
+	#check it:
 		def parse(self, response):
 		print response.request.headers['User-Agent']
 		
