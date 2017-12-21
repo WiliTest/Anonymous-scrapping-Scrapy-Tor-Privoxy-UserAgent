@@ -77,7 +77,7 @@ if `StartService() failed : Access is denied` see: https://stackoverflow.com/a/4
 			 ( pip install request[socks] → did not work)
 
 
-		( alternative: https://github.com/aivarsk/scrapy-proxies )
+	( alternative: https://github.com/aivarsk/scrapy-proxies )
 	
 ■■■ **Privoxy**
 
@@ -96,7 +96,7 @@ then follow that https://superuser.com/a/1130890/235752
 	 	which by default listens at port 8118.
 	
 	
-■■■ **Auto switch user agent** 
+■■■ **Auto switch user agent**
 
 ● pip install scrapy-fake-useragent
 ● Follow the steps:  https://github.com/alecxe/scrapy-fake-useragent  (need to write in settings.py)
