@@ -7,72 +7,59 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 #### Here is just a draft of informations I would have loved to find in one place:
 Sorry the formatting is messed up (no time), you are very welcome to improve it !
 
-■■■ **port number & proxy**
+■■■ **About port number & proxy**
 
 ● 9051 :  If ControlPort is set ( with this port, in torrc file), Tor will accept connections on this port and allow those connections to control the Tor process using the Tor Control Protocol. 
-		# unless you also specify one or more of HashedControlPassword or CookieAuthentication, setting this option will cause Tor to allow any process on the local host to control it. This option is required for many Tor controllers; most use the value of 9051.
+Unless you also specify one or more of HashedControlPassword or CookieAuthentication, setting this option will cause Tor to allow any process on the local host to control it. This option is required for many Tor controllers; most use the value of 9051.
 	
-● 9050 (it's the socks5 port) it's the default port Tor uses for listening for SOCKS5 proxy connections. You use it if you want to proxy something through Tor.	
-
- ( 9050 needs the tor win32 services running )  
-	#SOCKS proxy only deal with the connection (notwork protocol IP, port) it doesn't see the infoormation of the request (such as HTML). It 
+● 9050 (it's the socks5 port) it's the default port Tor uses for listening for SOCKS5 proxy connections. You use it if you want to proxy something through Tor.	SOCKS proxy only deal with the connection (notwork protocol IP, port) it doesn't see the infoormation of the request (such as HTML). (9050 needs the tor win32 services running )  
 		
- (( 9150 only work when tor bronwser run (independament du service)  ))
- 9150 is the same thing, only it's the default for Tor Browser Bundle. Since the TBB has to run Tor in the background, it might as well make the port available for you to use outside of the browser while it is running.
+● 9150 is the same thing, only it's the default for Tor Browser Bundle. Since the TBB has to run Tor in the background, it might as well make the port available for you to use outside of the browser while it is running. (9150 only work when tor bronwser run, it doesnt need the service). 
 
 
-● Proxy looks like: https://<proxy>:<port>/
+● Proxy looks like: `https://<proxy>:<port>/`
 	
 	
-■■■ **Info set tor IP change:**
-
-https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor/30440372#30440372
 	
-● ≠ btw privoxy/tor htpps vs socks:
+● What's the difference between privoxy/tor htpps vs socks?
 https://security.stackexchange.com/questions/45606/how-tor-privoxy-vidalia-and-polipo-are-getting-together
 		
-● tor is a SOCKS proxy (doesnt understand TCP traffic.)
-
-● while privoxy and polipo are HTTP proxies
+● tor is a SOCKS proxy (doesnt understand TCP traffic) but privoxy (and polipo) are HTTP proxies
 
 ● Privoxy is a proxy server that (pay attention here) uses application-layer filtering. HTTP traffic passed through Privoxy will have certain privacy-oriented rules applied to them. For example, Privoxy will block ads, detect and disable click-tracking scripts, disabling pop-ups, etc.
 		
-**What's the difference between ControlPort and SocksPort?**
+● What's the difference between ControlPort and SocksPort? https://tor.stackexchange.com/questions/12627/whats-the-difference-between-controlport-and-socksport
 
-https://tor.stackexchange.com/questions/12627/whats-the-difference-between-controlport-and-socksport
+● Info set tor IP change: https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor/30440372#30440372
+
 	
-	
-■■■ **Using tor Expert Bundle (not for tor brownser)**
+■■■ **Using Tor Expert Bundle (see bellow for Tor Brownser)**
 
 ● dwd it here: https://www.torproject.org/download/download.html.en
 	
 	
-1) set a password in cmd 
-	C:\Users\User\Desktop\Tor\Tor>tor.exe --hash-password "dz#X2nB%LJHGF0sB9DnZWv#E0nJR" | more
+1) set a password in using cmd prompt:
+C:\Users\User\Desktop\Tor\Tor>tor.exe --hash-password "dz#X2nB%LJHGF0sB9DnZWv#E0nJR" | more
 	 It will give you a hash (looks like: 16:4E9AE....) copy it. You'll need it for the torrc file 
 		you could also set a cookie https://stem.torproject.org/tutorials/the_little_relay_that_could.html
 		
 2)  #create the "torrc" file (without extension) in C:\Users\User\Desktop\Tor\torrc
 				
-3) Add that to the torrc:
-		ControlPort 9051
-		If you enable the controlport, be sure to enable one of these
-		authentication methods, to prevent attackers from accessing it.
-		HashedControlPassword 16:04C7A70H876B7BS6B69EE768NV7375CA2B7493414372
+3) Add that to the torrc file:
+	ControlPort 9051
+	If you enable the controlport, be sure to enable one of these
+	authentication methods, to prevent attackers from accessing it.
+	HashedControlPassword 16:04C7A70H876B7BS6B69EE768NV7375CA2B7493414372
 			
-
-
-● info about torrc + list of option you can enable on it : 			https://tor.stackexchange.com/questions/6712/using-the-tor-expert-bundle-on-windows
-			
-			
-● you need to remove + recreate the service `Tor Win32` using the cmd prompt (the path point to the torrc file) 
+● some info about torrc + list of option you can enable on it : 			https://tor.stackexchange.com/questions/6712/using-the-tor-expert-bundle-on-windows
+					
+● to refresh tor, you need to remove + recreate the service `Tor Win32`. Using the cmd prompt (the path point to the torrc file) 
 
 C:\Users\User\Desktop\Tor\Tor>tor.exe --service remove
 C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\user\Desktop\Tor\torrc"
 C:\Users\User\Desktop\Tor\Tor>tor.exe --service install -options -f "C:\Users\user\Desktop\tor-win32-0.3.1.7\torrc"
 			
-			
-if StartService() failed : `Access is denied` see: https://stackoverflow.com/a/47291114/1486850 
+if `StartService() failed : Access is denied` see: https://stackoverflow.com/a/47291114/1486850 
 
 			
 **to test it:**
@@ -90,7 +77,7 @@ if StartService() failed : `Access is denied` see: https://stackoverflow.com/a/4
 			 ( pip install request[socks] → did not work)
 
 
-			alternative: https://github.com/aivarsk/scrapy-proxies
+		( alternative: https://github.com/aivarsk/scrapy-proxies )
 	
 ■■■ **Privoxy**
 
