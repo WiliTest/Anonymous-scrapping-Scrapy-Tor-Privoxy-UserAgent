@@ -7,7 +7,8 @@ A tuto showing how to use scrapy in anonymous way (ex: changing IP)
 #### Here is just a draft of informations I would have loved to find in one place:
 Sorry the formatting is messed up (no time), you are very welcome to improve it !
 
-**port number & proxy**
+■ **port number & proxy**
+
 ● 9051 :  If ControlPort is set ( with this port, in torrc file), Tor will accept connections on this port and allow those connections to control the Tor process using the Tor Control Protocol. 
 		# unless you also specify one or more of HashedControlPassword or CookieAuthentication, setting this option will cause Tor to allow any process on the local host to control it. This option is required for many Tor controllers; most use the value of 9051.
 	
@@ -23,7 +24,7 @@ Sorry the formatting is messed up (no time), you are very welcome to improve it 
 ● Proxy looks like: https://<proxy>:<port>/
 	
 	
-**Info set tor IP change:**
+■■■ **Info set tor IP change:**
 
 https://stackoverflow.com/questions/30286293/make-requests-using-python-over-tor/30440372#30440372
 	
@@ -39,7 +40,7 @@ https://security.stackexchange.com/questions/45606/how-tor-privoxy-vidalia-and-p
 https://tor.stackexchange.com/questions/12627/whats-the-difference-between-controlport-and-socksport
 	
 	
-**Using tor Expert Bundle (not for tor brownser)**
+■■■ **Using tor Expert Bundle (not for tor brownser)**
 
 ● dwd it here: https://www.torproject.org/download/download.html.en
 	
@@ -89,7 +90,7 @@ if StartService() failed : `Access is denied` see: https://stackoverflow.com/a/4
 
 			alternative: https://github.com/aivarsk/scrapy-proxies
 	
-**Privoxy**
+■■■ **Privoxy**
 
 ● why do I need privoxy: https://security.stackexchange.com/a/45610/90756 
 	
@@ -106,7 +107,7 @@ then follow that https://superuser.com/a/1130890/235752
 	 	which by default listens at port 8118.
 	
 	
-**Auto switch user agent ** 
+■■■ **Auto switch user agent ** 
 
 ● pip install scrapy-fake-useragent
 ● Follow the steps:  https://github.com/alecxe/scrapy-fake-useragent  (need to write in settings.py)
@@ -116,7 +117,7 @@ then follow that https://superuser.com/a/1130890/235752
 	print response.request.headers['User-Agent']
 		
 		
-**If you use tor brownser (bad idea):**
+■■■ **If you use tor brownser (bad idea):**
 
 ● just write these code : 	https://stackoverflow.com/a/33875657/1486850  *but change all 9050 into 9150 !*
 			
